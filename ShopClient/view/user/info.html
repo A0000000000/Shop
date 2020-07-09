@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户信息</title>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/node_modules/axios/dist/axios.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/js/user/info.js"></script>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/user/info.css">
+</head>
+<body>
+    <div id="header">
+        <p>个人信息</p>
+    </div>
+    <div class="container" id="app">
+        <div class="item">
+            <div class="name">用户id</div>
+            <div class="content"><p>{{ id }}</p></div>
+        </div>
+        <div class="item">
+            <div class="name">用户名</div>
+            <div class="content"><p>{{ username }}</p></div>
+        </div>
+        <div class="item">
+            <div class="name">新密码</div>
+            <div class="content"><input type="password" class="form-control" v-model="password"/></div>
+        </div>
+        <div class="item">
+            <div class="name">重复密码</div>
+            <div class="content"><input type="password" class="form-control" v-model="rePassword"/></div>
+        </div>
+        <div class="item">
+            <div class="name">生日</div>
+            <div class="content"><input type="date" class="form-control" v-model="birthday"/></p></div>
+        </div>
+        <div class="item">
+            <div class="name">电子邮箱</div>
+            <div class="content"><p>{{ email }}</p></div>
+        </div>
+        <div class="item">
+            <div class="name">电话号码</div>
+            <div class="content"><input type="text" class="form-control" v-model="phone"/></div>
+        </div>
+        <div class="item">
+            <div class="name">创建时间</div>
+            <div class="content"><p>{{ createTime }}</p></div>
+        </div>
+        <div>
+            <button class="btn btn-primary" @click="updateMessage">更新信息</button>
+        </div>
+    </div>
+    <div>
+        <a href="/view/user/location.html"></a>
+    </div>
+</body>
+</html>

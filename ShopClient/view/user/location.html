@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收货地址</title>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/node_modules/axios/dist/axios.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/js/user/location.js"></script>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/user/location.css">
+</head>
+<body>
+    <div id="header">收货地点</div>
+    <div class="container" id="app">
+        <div>
+            <input type="text" class="form-control" v-model="zipCode" placeholder="邮政编码" />
+            <input type="text" class="form-control" v-model="name" placeholder="地点" />
+            <div class="clear" @click="addNewLocation" style="text-align: center; margin-bottom: 50px;"><button class="btn btn-primary">增加</button></div>      
+        </div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">id</th>
+                <th scope="col">邮政编码</th>
+                <th scope="col">地点</th>
+                <th scope="col">操作</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) in list" :key="index">
+                <th scope="row">{{ item.id }}</th>
+                <td>{{ item.zipCode }}</td>
+                <td>{{ item.name }}</td>
+                <td><button class="btn btn-primary" @click="deleteItem(index)">删除</button></td>
+              </tr>
+            </tbody>
+          </table>
+    </input>
+</body>
+</html>

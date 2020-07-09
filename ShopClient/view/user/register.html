@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册</title>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/node_modules/axios/dist/axios.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/js/user/register.js"></script>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/user/register.css">
+</head>
+<body>
+    <div id="header">
+        <p>用户注册</p>
+    </div>
+    <div id="app" class="container">
+        <div class="form-group">
+            <label for="username">用户名</label>
+            <input type="text" v-model="username" class="form-control" id="username" placeholder="用户名">
+        </div>
+        <div class="form-group">
+            <label for="password">密码</label>
+            <input type="password" v-model="password" class="form-control" id="password" placeholder="密码">
+        </div>
+        <div class="form-group">
+            <label for="email">邮箱地址</label>
+            <input type="email" v-model="email" class="form-control" id="email" placeholder="电子邮箱">
+        </div>
+        <div class="form-group">
+            <label for="phone">电话号码</label>
+            <input type="text" v-model="phone" class="form-control" id="phone" placeholder="电话号码">
+        </div>
+        <div class="form-group">
+            <label for="birthday">生日</label>
+            <input type="date" v-model="birthday" class="form-control" id="birthday" placeholder="生日">
+        </div>
+        <div class="form-group">
+            <button type="button" class="btn btn-primary" @click="register">注册</button>
+        </div>
+    </div>
+</body>
+</html>

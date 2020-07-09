@@ -1,0 +1,26 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: gray;
+}
+
+#header {
+    text-align: center;
+    color: red;
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+#btn {
+    text-align: center;
+}
+
+#list {
+    font-size: 30px;
+    color: #66CCFF;
+    text-align: center;
+    margin-top: 70px;
+}

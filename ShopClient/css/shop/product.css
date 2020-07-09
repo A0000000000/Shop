@@ -1,0 +1,15 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: gray;
+}
+
+.header {
+    margin-top: 100px;
+    font-size: 50px;
+    color: red;
+    text-align: center;
+}

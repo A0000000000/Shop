@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>管理商品</title>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/node_modules/axios/dist/axios.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/js/admin/product.js"></script>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/admin/product.css">
+</head>
+<body>
+    <div id="header">
+        <p>添加新的商品</p>
+    </div>
+    <div id="app" class="container">
+        <div>
+            <div class="form-group">
+                <label for="name">商品名称</label>
+                <input type="text" v-model="name" class="form-control" id="name" placeholder="商品名称">
+            </div>
+            <div class="form-group">
+                <label for="price">商品单价</label>
+                <input type="number" v-model="price" class="form-control" id="price" placeholder="商品单价">
+            </div>
+            <div class="form-group">
+                <label for="repository">商品库存</label>
+                <input type="number" v-model="repository" class="form-control" id="repository" placeholder="商品库存">
+            </div>
+            <div class="form-group">
+                <label for="kind">商品种类</label>
+                <input type="text" v-model="kind" class="form-control" id="kind" placeholder="商品种类">
+            </div>
+            <div class="form-group">
+                <label for="supplier">供应商</label>
+                <input type="text" v-model="supplier" class="form-control" id="supplier" placeholder="供应商">
+            </div>
+            <div class="form-group">
+                <label for="message">商品介绍</label>
+                <input type="text" v-model="message" class="form-control" id="message" placeholder="商品介绍">
+            </div>
+            <div id="btn" class="form-group">
+                <button type="button" class="btn btn-primary" @click="addNewProduct">添加</button>
+            </div>
+        </div>
+        <div>
+            <div id="list"><p>商品列表</p></div>
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">商品id</th>
+                    <th scope="col">商品名称</th>
+                    <th scope="col">商品简介</th>
+                    <th scope="col">商品单价</th>
+                    <th scope="col">商品库存</th>
+                    <th scope="col">商品种类</th>
+                    <th scope="col">供应商</th>
+                    <th scope="col">操作</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(item, index) in list" :key="index">
+                    <th scope="row">{{ item.id }}</th>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.message }}</td>
+                    <td>{{ item.price }}</td>
+                    <td>{{ item.repository }}</td>
+                    <td>{{ item.kind }}</td>
+                    <td>{{ item.supplier }}</td>
+                    <td><button class="btn btn-primary" @click="deleteItem(index)">删除</button></td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

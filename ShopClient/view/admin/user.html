@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查看用户</title>
+    <script src="/node_modules/vue/dist/vue.js"></script>
+    <script src="/node_modules/axios/dist/axios.js"></script>
+    <script src="/node_modules/jquery/dist/jquery.js"></script>
+    <script src="/js/admin/user.js"></script>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/admin/user.css">
+</head>
+<body>
+    <div id="header">
+        <p>用户列表</p>
+    </div>
+    <div id="app" class="container">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">用户id</th>
+                <th scope="col">用户名</th>
+                <th scope="col">生日</th>
+                <th scope="col">创建时间</th>
+                <th scope="col">邮箱</th>
+                <th scope="col">电话</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(item, index) in list" :key="index">
+                <th scope="row">{{ item.id }}</th>
+                <td>{{ item.username }}</td>
+                <td>{{ item.birthday }}</td>
+                <td>{{ item.createTime }}</td>
+                <td>{{ item.email }}</td>
+                <td>{{ item.phone }}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

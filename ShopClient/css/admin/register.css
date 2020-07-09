@@ -1,0 +1,23 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: gray;
+}
+
+#header {
+    text-align: center;
+    font-size: 50px;
+    margin-top: 100px;
+    color: red;
+}
+
+#app {
+    width: 50%
+}
+
+#btn {
+    text-align: center;
+}
